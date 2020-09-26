@@ -17,8 +17,8 @@ __license__ = "GPL v3"
 bl_info= {
     "name": "PhysFX Tools",
     "author": "Christopher Hosken",
-    "version": (2,0),
-    "blender": (2,80,3),
+    "version": (3,0),
+    "blender": (2,90,1),
     "location": "View3D > Properties > PhysFX",
     "description": "Useful tools for physics simulations",
     "warning": "",
