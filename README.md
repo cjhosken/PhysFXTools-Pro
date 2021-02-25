@@ -1,7 +1,7 @@
-PhysFX
+PhysFX Tools
 ===============
 
-PhysFX is a Blender tool used to help users speed up their workflow in physics simulations.
+PhysFX Tools is a Blender addon used to help users speed up their workflow in physics simulations.
 
 Usage
 -----
@@ -40,8 +40,8 @@ Released under the [GPL License].
 
 Authored and maintained by Christopher Hosken.
 
-> Email [blendervcg@gmail.com] 
-> Instagram [@visual_cg](https://www.instagram.com/visual_cg/)
+> Email [hoskenchristopher@gmail.com] 
+> Instagram [@cjhosken](https://www.instagram.com/visual_cg/)
 > Artstation [Christopher Hosken](https://www.artstation.com/visualcg)
 
 [GPL License]: http://www.gnu.org/licenses/gpl-3.0.html
