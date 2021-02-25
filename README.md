@@ -5,7 +5,7 @@ PhysFX Tools is a Blender addon used to help users speed up their workflow in ph
 
 Usage
 -----
-* Install Blender 2.81 or greater: https://www.blender.org/download/
+* Install Blender 2.9 or greater: https://www.blender.org/download/
 * Under File > User Preferences... > Add-ons > Install From File... open the downloaded ZIP file
 * Under File > User Preferences... > Add-ons enable this script (search for "PhysFX")
 * Locate the toolbar in the 3D View under Properties > PhysFX
@@ -41,7 +41,8 @@ Released under the [GPL License].
 Authored and maintained by Christopher Hosken.
 
 > Email [hoskenchristopher@gmail.com] 
-> Instagram [@cjhosken](https://www.instagram.com/visual_cg/)
-> Artstation [Christopher Hosken](https://www.artstation.com/visualcg)
+> Instagram [@cjhosken](https://www.instagram.com/cjhosken/)
+> Artstation [Christopher Hosken](https://www.artstation.com/christopherhosken)
+> Discord [@Cjhosken#7147]
 
 [GPL License]: http://www.gnu.org/licenses/gpl-3.0.html
