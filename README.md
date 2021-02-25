@@ -7,8 +7,8 @@ Usage
 -----
 * Install Blender 2.9 or greater: https://www.blender.org/download/
 * Under File > User Preferences... > Add-ons > Install From File... open the downloaded ZIP file
-* Under File > User Preferences... > Add-ons enable this script (search for "PhysFX")
-* Locate the toolbar in the 3D View under Properties > PhysFX
+* Under File > User Preferences... > Add-ons enable this script (search for "PhysFX-Tools")
+* Locate the toolbar in the 3D View under Properties > PhysFX-Tools
 
 How it works
 ------------
