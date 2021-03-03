@@ -1,5 +1,8 @@
 from bpy.types import PropertyGroup
 from bpy.props import BoolProperty, EnumProperty, IntProperty, FloatProperty
+import __init__
+
+parent_path = __init__.parent_path
 
 class PhysFXToolsPro_Properties(PropertyGroup):
     glue_collection : BoolProperty(
@@ -25,7 +28,7 @@ class PhysFXToolsPro_Properties(PropertyGroup):
     proxy_resolution : IntProperty(
         name = "Proxy Resolution",
         description = "Resolution of proxy mesh.",
-        default = 3,
+        default = 4,
         min = 1,
         max = 6,
     )
@@ -33,7 +36,7 @@ class PhysFXToolsPro_Properties(PropertyGroup):
     proxy_offset : FloatProperty(
         name = "Proxy Offset",
         description = "Amount of space between base mesh and proxy.",
-        default = 0,
+        default = 0.1,
         min = 0,
     )
 
@@ -91,7 +94,7 @@ class PhysFXToolsPro_Properties(PropertyGroup):
         default = 0.02,
     )
 
-    rigidbody_active : BoolProperty(
+    rigidbody_is_active : BoolProperty(
         name = "Rigidbody Type",
         description = "Role of object in rigidbody simulations.",
         default = True,

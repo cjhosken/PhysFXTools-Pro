@@ -64,13 +64,19 @@ class PhysFXToolsPro_OT_GroupRigidBodies(Operator):
 
             if main_obj.type == 'MESH':
                 bpy.ops.rigidbody.object_add()
-                main_obj.rigid_body.mass = props.rigidbody_mass
-                main_obj.rigid_body.collision_shape = props.rigidbody_shape
-                main_obj.rigid_body.mesh_source = props.rigidbody_source
-                main_obj.rigid_body.friction = props.rigidbody_friction
-                main_obj.rigid_body.restitution = props.rigidbody_bounce
-                main_obj.rigid_body.use_margin = True
-                main_obj.rigid_body.collision_margin = props.rigidbody_margin
+                if main_obj.rigid_body is not None:
+                    if props.rigidbody_is_active:
+                        main_obj.rigid_body.mass = props.rigidbody_mass
+                    main_obj.rigid_body.collision_shape = props.rigidbody_shape
+                    main_obj.rigid_body.mesh_source = props.rigidbody_source
+                    main_obj.rigid_body.friction = props.rigidbody_friction
+                    main_obj.rigid_body.restitution = props.rigidbody_bounce
+                    main_obj.rigid_body.use_margin = True
+                    main_obj.rigid_body.collision_margin = props.rigidbody_margin
+                else:
+                    show_message_box("Uh oh!", "Something went wrong.", "ERROR")
+                    return {'CANCELLED'}
+
                 bpy.ops.rigidbody.object_settings_copy()
                 return {'FINISHED'}
             else:

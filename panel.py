@@ -1,4 +1,5 @@
 import bpy
+import addon_utils
 from bpy.types import Panel
 from bl_ui.utils import PresetPanel
 
@@ -53,6 +54,7 @@ class PhysFXToolsPro_PT_ProxyMeshPanel(PhysFXToolsPro_PT_Panel, Panel):
 
         row = layout.row()
         row.operator("physfxtoolspro.makeproxymesh", text="Create Proxy", icon='MOD_MESHDEFORM')
+        row.operator("physfxtoolspro.deleteproxymesh", text="", icon="X")
 
 class PhysFXToolsPro_PT_GroupingBasePanel(PhysFXToolsPro_PT_Panel, Panel):
     bl_label = "Grouping"
@@ -88,7 +90,7 @@ class PhysFXToolsPro_PT_GroupCollisionsPanel(PhysFXToolsPro_PT_Panel, Panel):
 
         row = layout.row()
         row.operator("physfxtoolspro.groupcollisions", text="Group Collisions")
-        row.operator("physfxtoolspro.deletecollisions", text="", icon="PANEL_CLOSE")
+        row.operator("physfxtoolspro.deletecollisions", text="", icon="X")
 
 class PhysFXToolsPro_PT_GroupRigidBodiesPanel(PhysFXToolsPro_PT_Panel, Panel):
     bl_label = "Rigid Bodies"
@@ -104,14 +106,16 @@ class PhysFXToolsPro_PT_GroupRigidBodiesPanel(PhysFXToolsPro_PT_Panel, Panel):
         col.label(text="Settings")
         col.prop(props, 'rigidbody_shape', text="Shape")
         col.prop(props, 'rigidbody_source', text="Source")
-        col.prop(props, 'rigidbody_mass', text="Mass")
+        col.prop(props, 'rigidbody_is_active', text="Active")
+        if props.rigidbody_is_active:
+            col.prop(props, 'rigidbody_mass', text="Mass")
         col.prop(props, 'rigidbody_friction', text="Friction")
         col.prop(props, 'rigidbody_bounce', text="Bounciness")
         col.prop(props, 'rigidbody_margin', text="Margin")
 
         row = layout.row()
         row.operator("physfxtoolspro.grouprigidbodies", text="Group Rigid Bodies")
-        row.operator("physfxtoolspro.deleterigidbodies", text="", icon="PANEL_CLOSE")
+        row.operator("physfxtoolspro.deleterigidbodies", text="", icon="X")
 
 class PHYSFXTOOLSPRO_PT_SoftbodyPresets(PresetPanel, Panel):
     bl_label = "Softbody Presets"
@@ -127,21 +131,39 @@ class PhysFXToolsPro_PT_SoftbodyPanel(PhysFXToolsPro_PT_Panel, Panel):
     def draw(self, context):
         obj = context.active_object
         softbody_active = False
-        for mod in obj.modifiers:
-            if mod.type == "SOFT_BODY":
-                softbody_active = True
+        if obj is not None:
+            for mod in obj.modifiers:
+                if mod.type == "SOFT_BODY":
+                    softbody_active = True
 
         scene = context.scene
         layout = self.layout
 
         row = layout.row()
         row.operator("physfxtoolspro.addsoftbody", text="Add Softbody")
-        row.operator("physfxtoolspro.deletesoftbody", text="", icon="PANEL_CLOSE")
+        row.operator("physfxtoolspro.deletesoftbody", text="", icon="X")
 
         row = layout.row()
         row.label(text="Presets: ")
         PHYSFXTOOLSPRO_PT_SoftbodyPresets.draw_panel_header(row)
         row.enabled = (softbody_active)
+
+class PhysFXToolsPro_PT_CellFracturePanel(PhysFXToolsPro_PT_Panel, Panel):
+    bl_label = "Cell Fracture"
+    bl_idname = "PANEL_PT_physfxtoolspro_cellfracture"
+    bl_parent_id = "PANEL_PT_physfxtoolspro"
+
+    def draw(self, context):
+        scene = context.scene
+        layout = self.layout
+
+        row = layout.row()
+
+        if addon_utils.check("object_fracture_cell")[0]:
+            row.operator("object.add_fracture_cell_objects", text="Cell Fracture")
+            row.operator("physfxtoolspro.importcellfracturepresets", text="", icon="ADD")
+        else:
+            row.label(text="Please enable the Cell Fracture addon!")
 
 class PhysFXToolsPro_PT_ExtraPanel(PhysFXToolsPro_PT_Panel, Panel):
     bl_label = "Extra"
