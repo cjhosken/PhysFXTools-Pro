@@ -15,12 +15,12 @@ __copyright__ = "(c) 2021,  Christopher Hosken"
 __license__ = "GPL v3"
 
 bl_info= {
-    "name": "PhysFX Tools Pro",
+    "name": "PhysFXTools-Pro",
     "author": "Christopher Hosken",
     "description": "Convenient tools for Blender physics simulations",
-    "blender": (2,92,0),
-    "version": (5,0),
-    "location": "View3D > Properties > PhysFX Tools Pro",
+    "blender": (2,93,0),
+    "version": (2,0),
+    "location": "View3D > Object Context Menu > PhysFXTools-Pro",
     "wiki_url": "https://github.com/Christopher-Hosken/PhysFX-Tools/wiki",
     "tracker_url" : "https://github.com/Christopher-Hosken/PhysFX-Tools/issues",
     "category": "Animation",
@@ -61,7 +61,7 @@ for module_name in module_list:
     if (module_name in sys.modules):
         reload(sys.modules[module_name])
 
-import modules.funcs as funcs
+
 import props
 import modules.glue as glue
 import modules.grouping as grouping

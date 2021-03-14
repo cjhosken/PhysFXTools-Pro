@@ -9,7 +9,7 @@ class PhysFXToolsPro_PT_Panel(Panel):
     bl_category = "PhysFX Tools Pro"
 
 class PhysFXToolsPro_PT_BasePanel(PhysFXToolsPro_PT_Panel, Panel):
-    bl_label = "PhysFX Tools Pro"
+    bl_label = "PhysFXTools-Pro"
     bl_idname = "PANEL_PT_physfxtoolspro"
 
     def draw(self, context):
@@ -171,4 +171,15 @@ class PhysFXToolsPro_PT_ExtraPanel(PhysFXToolsPro_PT_Panel, Panel):
     bl_parent_id = "PANEL_PT_physfxtoolspro"
 
     def draw(self, context):
-        pass
+        layout = self.layout
+
+        row = layout.row()
+        row.label(text="Get in contact!")
+        row = layout.row()
+        row.label(text="hoskenchristopher@gmail.com")
+        row = layout.row()
+        row.operator('wm.url_open', text='Discord').url = "https://discordapp.com/channels/@me/Cjhosken#7147/"
+        row.operator('wm.url_open', text='Instagram').url = "https://www.instagram.com/cjhosken/"
+        row = layout.row()
+        row.operator('wm.url_open', text='Artstation').url = "https://www.artstation.com/christopherhosken"
+        row.operator('wm.url_open', text='Report Bug').url = "https://github.com/Christopher-Hosken/PhysFX-Tools/issues"
