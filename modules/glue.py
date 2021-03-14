@@ -13,11 +13,15 @@ class PhysFXToolsPro_OT_GlueBodies(Operator):
     bl_options = {"REGISTER", "UNDO"}
 
     def execute(self, context):
-
         _collection = bpy.context.collection
         _objects = bpy.context.selected_objects
         depsgraph = context.evaluated_depsgraph_get()
         props = context.scene.physfxtoolspro_props
+
+        try:
+            bpy.ops.rigidbody.world_add()
+        except:
+            pass
 
         if (props.glue_collection):   
             if _collection.name == "Scene Collection":
@@ -93,7 +97,6 @@ class PhysFXToolsPro_OT_GlueBodies(Operator):
                                         else:
                                             constraint.use_breaking = True
                                             constraint.breaking_threshold = props.breaking_threshold
-
         return {'FINISHED'}
 
 class PhysFXToolsPro_OT_DeleteGlue(Operator):

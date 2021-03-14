@@ -61,21 +61,18 @@ class PhysFXToolsPro_OT_GroupRigidBodies(Operator):
         active_objects = context.selected_objects
         if len(active_objects) > 0:
             main_obj = active_objects[0]
-
+            context.view_layer.objects.active = main_obj
             if main_obj.type == 'MESH':
-                bpy.ops.rigidbody.object_add()
-                if main_obj.rigid_body is not None:
-                    if props.rigidbody_is_active:
-                        main_obj.rigid_body.mass = props.rigidbody_mass
-                    main_obj.rigid_body.collision_shape = props.rigidbody_shape
-                    main_obj.rigid_body.mesh_source = props.rigidbody_source
-                    main_obj.rigid_body.friction = props.rigidbody_friction
-                    main_obj.rigid_body.restitution = props.rigidbody_bounce
-                    main_obj.rigid_body.use_margin = True
-                    main_obj.rigid_body.collision_margin = props.rigidbody_margin
-                else:
-                    show_message_box("Uh oh!", "Something went wrong.", "ERROR")
-                    return {'CANCELLED'}
+                if main_obj.rigid_body is None:
+                    bpy.ops.rigidbody.object_add()
+                if props.rigidbody_is_active:
+                    main_obj.rigid_body.mass = props.rigidbody_mass
+                main_obj.rigid_body.collision_shape = props.rigidbody_shape
+                main_obj.rigid_body.mesh_source = props.rigidbody_source
+                main_obj.rigid_body.friction = props.rigidbody_friction
+                main_obj.rigid_body.restitution = props.rigidbody_bounce
+                main_obj.rigid_body.use_margin = True
+                main_obj.rigid_body.collision_margin = props.rigidbody_margin
 
                 bpy.ops.rigidbody.object_settings_copy()
                 return {'FINISHED'}
