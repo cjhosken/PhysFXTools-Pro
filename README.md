@@ -65,12 +65,12 @@ The Extra panel is where you can report a bug or get in contact with me, the aut
 # Credits
 Released under the [GPL License].
 
-Authored and maintained by Christopher Hosken.
+Authored and maintained by [Christopher Hosken](https://github.com/Christopher-Hosken).
 
-> Email [hoskenchristopher@gmail.com] 
-> Instagram [@cjhosken](https://www.instagram.com/cjhosken/)
-> Artstation [Christopher Hosken](https://www.artstation.com/christopherhosken)
-> Discord [@Cjhosken#7147]
+Email [hoskenchristopher@gmail.com] 
+Instagram [@cjhosken](https://www.instagram.com/cjhosken/)
+Artstation [Christopher Hosken](https://www.artstation.com/christopherhosken)
+Discord [@Cjhosken#7147]
 
 ## License
 [GPL License](http://www.gnu.org/licenses/gpl-3.0.html)
