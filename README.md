@@ -68,8 +68,11 @@ Released under the [GPL License].
 Authored and maintained by [Christopher Hosken](https://github.com/Christopher-Hosken).
 
 Email [hoskenchristopher@gmail.com] 
+
 Instagram [@cjhosken](https://www.instagram.com/cjhosken/)
+
 Artstation [Christopher Hosken](https://www.artstation.com/christopherhosken)
+
 Discord [@Cjhosken#7147]
 
 ## License
