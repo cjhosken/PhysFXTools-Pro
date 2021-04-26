@@ -18,7 +18,7 @@ bl_info= {
     "name": "PhysFXTools-Pro",
     "author": "Christopher Hosken",
     "description": "Convenient tools for Blender physics simulations",
-    "blender": (2,93,0),
+    "blender": (3,0,0),
     "version": (3,0),
     "location": "View3D > Object Context Menu > PhysFXTools-Pro",
     "wiki_url": "https://github.com/Christopher-Hosken/PhysFX-Tools/wiki",
