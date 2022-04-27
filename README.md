@@ -73,7 +73,7 @@ Instagram [@cjhosken](https://www.instagram.com/cjhosken/)
 
 Artstation [Christopher Hosken](https://www.artstation.com/christopherhosken)
 
-Discord [@cjhosken#2065]
+Discord [@cjhosken#2924]
 
 ## License
 [GPL License](http://www.gnu.org/licenses/gpl-3.0.html)
